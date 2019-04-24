@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX using API</title>
+</head>
+<body>
+    <div id="content"></div>
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            // const getJSONData = () => {
+            //     const url = "https://jsonplaceholder.typicode.com/posts"
+            //     $.getJSON(url).done((res) => {
+            //         $.each(res,(i,item) => {
+            //             $("<h3>").text("Title: " + item.title).appendTo("#content")
+            //             if(i === 10) {
+            //                 return false
+            //             }
+            //         })
+            //     }).fail((e) => {
+            //         console.log(e)
+            //     })
+            // }
+
+            const getJSONData = () => {
+                $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=dallas&appid=ab08ea294da52560ded46ad9f54be0f6&units=imperial").done((res) => {
+                    console.log(Math.round(res.main.temp))
+                })
+            }
+
+
+            getJSONData()
+        })
+    </script>
+</body>
+</html>

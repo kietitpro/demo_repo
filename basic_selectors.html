@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <p></p>
+    </div>
+    <script>
+    document.querySelector("#create").addEvemtListener("click",() => {
+        createContent()
+    })
+    document.querySelector("#change").addEvemtListener("click",() => {
+        createContent()
+    })
+    document.querySelector("#changeAll").addEvemtListener("click",() => {
+        createContent()
+    })
+
+    const createContent = () => {
+        $("#example").html("<p>This is some text</p>")
+    }
+
+    const changeContent = () => {
+        const newText = "<p>Some more text</p>"
+        $("#para2").html(newText)
+    }
+
+    const changeAllContent = () => {
+        $("example p").text("Keep p tags, but change the text!")
+    }
+
+    // // Append Method
+    // $("#example p").append("with some appended text!")
+
+    // // Prepend MEthod
+    // $("example p").append("hello")
+    
+    // After Method
+    // $("#example p").after("<p>---------------------------</p>")
+
+    // // Before Method
+    // $("#example p").before("<p>****************************</p>")
+
+    // Remove Method
+    $("#example p.a, #example p.b").remove()
+    </script>
+    
+    
+</body>
+</html>
